@@ -18,7 +18,7 @@ namespace WorldCupSimulator.Class
 
         public void start()
         {
-            if (TeamList.Count < 2)
+            if (TeamList.Count != 2)
             {
                 throw new Exception("Oops! The group don't have necessary teams.");
             }
