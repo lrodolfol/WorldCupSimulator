@@ -14,10 +14,13 @@ teamsList = new List<Team>();
 
 do
 {
+    teamsList = new List<Team>();
+
     using (var file = File.OpenText(pathFileTeams)){
      
         while (!file.EndOfStream)
         {
+
             var lineTeams = file.ReadLine();
             string[]? fields = lineTeams.Split(";");
 

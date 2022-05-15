@@ -52,7 +52,7 @@ namespace WorldCupSimulator
 
         public void Start(List<Team> teams)
         {
-            if (teams == null || teams.Count == 0 || teams.Count != 32)
+            if (teams == null || teams.Count == 0)
             {
                 throw new ArgumentNullException(
                     "there are no teams, or the number of times is wrong. Please check the file"
