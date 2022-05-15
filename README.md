@@ -14,8 +14,12 @@
 </p>
 
 ## Operation 💻
+.NET CORE 6
+
 there are two phase: groups (A,B,C,D,E,F,G,H) and finais(Round sixteen, Round, Eight, Semi final and final)
+
 I use the FIFA ranking and random numbers for choose the match winner e the champion. 
+
 ..obs: (I will correct the name sexteen)
 
 Its necessary to have the file with the teams. (\Files\teams.csv)
