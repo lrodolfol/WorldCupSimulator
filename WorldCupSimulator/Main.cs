@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CsvHelper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -295,5 +296,8 @@ namespace WorldCupSimulator
             Console.WriteLine($"======{TeamWinner[0].Name}!!!======");
             Console.WriteLine("=======Congratulations!=======");
         }
+
+
+        
     }
 }

@@ -47,19 +47,23 @@ do
             /*GROUPS PHASE*/
             main.FillGroups();
             space();
+
             /*GROUPS ROUND SEXTEEN*/
             main.FillRoundSexteen();
             space();
+
             /*GROUPS ROUND EIGHT*/
             main.FillRoundEight();
             space();
+
             /*GROUPS ROUND SEMI FINAL*/
             main.FillSemiFinal();
             space();
+
             /*GROUPS ROUND FINAL*/
             main.FillFinal();
         }
-            catch (Exception ex)
+        catch (Exception ex)
         {
             Console.WriteLine($"Oops, there are a error: {ex.Message}");
         }

@@ -9,6 +9,7 @@ namespace WorldCupSimulator.Class
     {
         public Team TeamA { get; set; }
         public Team TeamB { get; set; }
+        public static Team TeamWinner { get;set; }
 
         private int goalsTeamA = 0;
         private int goalsTeamB = 0;
@@ -25,10 +26,12 @@ namespace WorldCupSimulator.Class
             if (goalsTeamA > goalsTeamB)
             {
                 this.TeamA.victories++;
+                TeamWinner = this.TeamA;
             }
             else if (goalsTeamB > goalsTeamA)
             {
                 this.TeamB.victories++;
+                TeamWinner = this.TeamB;
             }
             // there may be a tie
         }

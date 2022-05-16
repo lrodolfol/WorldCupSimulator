@@ -11,6 +11,5 @@ namespace WorldCupSimulator.Interface
         public List<Team> TeamList { get; set; }
         void start();
         public List<Team> FinalistsTeams();
-
     }
 }

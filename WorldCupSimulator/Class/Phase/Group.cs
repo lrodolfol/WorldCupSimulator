@@ -10,6 +10,7 @@ namespace WorldCupSimulator.Class
     public class Group : IPhase
     {
         public List<Team> TeamList {get;set;}
+        static List<Match> MatchList;
 
         public Group()
         {
@@ -28,6 +29,7 @@ namespace WorldCupSimulator.Class
                 for (int x = (i+1); x < TeamList.Count; x++)
                 {
                     Match match = new Match(TeamList[i], TeamList[x]);
+                    MatchList.Add(match);   
                     match.Play();
                 }
             }
