@@ -16,27 +16,40 @@ do
 {
     teamsList = new List<Team>();
 
-    using (var file = File.OpenText(pathFileTeams)){
-     
-        while (!file.EndOfStream)
+    try
+    {
+        using (var file = File.OpenText(pathFileTeams))
         {
 
-            var lineTeams = file.ReadLine();
-            string[]? fields = lineTeams.Split(";");
-
-            if(fields[0] == "0")
+            while (!file.EndOfStream)
             {
-                continue;
-            }
-        
-            string teamName = fields[1];
-            int teamForce = int.Parse(fields[2]);
-            string teamGroup = fields[3];
 
-            teamsList.Add(new Team(teamName, teamGroup, teamForce));
+                var lineTeams = file.ReadLine();
+                string[]? fields = lineTeams.Split(";");
+
+                if (fields[0] == "0")
+                {
+                    continue;
+                }
+
+                string teamName = fields[1];
+                int teamForce = int.Parse(fields[2]);
+                string teamGroup = fields[3];
+
+                teamsList.Add(new Team(teamName, teamGroup, teamForce));
+            }
         }
     }
-
+    catch(IndexOutOfRangeException ex)
+    {
+        Console.WriteLine("Oops We found a error: {0}.", ex.Message);
+        Console.WriteLine("Please Check the file. All line have a team, force and a group?");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine("Oops We found a error: {0}. Please Check the file", ex.Message);  
+    }
+    
     if(teamsList.Count > 0)
     {
         try

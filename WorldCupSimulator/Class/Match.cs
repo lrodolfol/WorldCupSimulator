@@ -9,7 +9,7 @@ namespace WorldCupSimulator.Class
     {
         public Team TeamA { get; set; }
         public Team TeamB { get; set; }
-        public static Team TeamWinner { get;set; }
+        public static Team? TeamWinner { get;set; }
 
         private int goalsTeamA = 0;
         private int goalsTeamB = 0;
@@ -23,17 +23,27 @@ namespace WorldCupSimulator.Class
         {
             ScoredGoal();
 
+            Console.WriteLine($"{TeamA.Name} Vs {TeamB.Name}");
+
+            TeamWinner = goalsTeamA > goalsTeamB ? this.TeamA : this.TeamB;
+
+            // there may be a tie
+            Random rand = new Random();
+            TeamWinner = (rand.Next(11)) == 0 ? this.TeamA : this.TeamB;
+
             if (goalsTeamA > goalsTeamB)
             {
                 this.TeamA.victories++;
-                TeamWinner = this.TeamA;
+                this.TeamB.defeats++;
             }
             else if (goalsTeamB > goalsTeamA)
             {
                 this.TeamB.victories++;
-                TeamWinner = this.TeamB;
+                this.TeamA.defeats++;
             }
-            // there may be a tie
+
+            Console.WriteLine($"\t Winner: {TeamWinner.Name} ");
+            Thread.Sleep(2000);
         }
 
         public void ScoredGoal()

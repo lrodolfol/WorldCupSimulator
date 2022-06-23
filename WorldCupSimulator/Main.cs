@@ -53,10 +53,10 @@ namespace WorldCupSimulator
 
         public void Start(List<Team> teams)
         {
-            if (teams == null || teams.Count == 0)
+            if (teams == null || teams.Count != 32)
             {
                 throw new ArgumentNullException(
-                    "there are no teams, or the number of times is wrong. Please check the file"
+                    "OOps, there are no teams, or the number of times is wrong. Please check the file"
                     );
             }
 
@@ -93,6 +93,13 @@ namespace WorldCupSimulator
                     case "H":
                         teamsHList.Add(team);
                         break;
+                    default:
+                        StringBuilder s = new StringBuilder("Oops there are teams without group: ");
+                        s.Append(team.Name);
+                        s.Append(". Please, Check the File");
+                        throw new Exception(
+                            s.ToString()
+                            );
                 }
             }
         }
@@ -102,49 +109,49 @@ namespace WorldCupSimulator
             /*==START GROUP A==*/
             IPhase groupA = new Group();
             groupA.TeamList = teamsAList;
-            groupA.start();
+            groupA.start(nameof(groupA));
             this.teamsFinalistsGroupA = groupA.FinalistsTeams();
 
             /*==START GROUP B==*/
             IPhase groupB = new Group();
             groupB.TeamList = teamsBList;
-            groupB.start();
+            groupB.start(nameof(groupB));
             this.teamsFinalistsGroupB = groupB.FinalistsTeams();
 
             /*==START GROUP C==*/
             IPhase groupC = new Group();
             groupC.TeamList = teamsCList;
-            groupC.start();
+            groupC.start(nameof(groupC));
             this.teamsFinalistsGroupC = groupC.FinalistsTeams();
 
             /*==START GROUP D==*/
             IPhase groupD = new Group();
             groupD.TeamList = teamsDList;
-            groupD.start();
+            groupD.start(nameof(groupD));
             this.teamsFinalistsGroupD = groupD.FinalistsTeams();
 
             /*==START GROUP E==*/
             IPhase groupE = new Group();
             groupE.TeamList = teamsEList;
-            groupE.start();
+            groupE.start(nameof(groupE));
             this.teamsFinalistsGroupE = groupE.FinalistsTeams();
 
             /*==START GROUP F==*/
             IPhase groupF = new Group();
             groupF.TeamList = teamsFList;
-            groupF.start();
+            groupF.start(nameof(groupF));
             this.teamsFinalistsGroupF = groupF.FinalistsTeams();
 
             /*==START GROUP G==*/
             IPhase groupG = new Group();
             groupG.TeamList = teamsGList;
-            groupG.start();
+            groupG.start(nameof(groupG));
             this.teamsFinalistsGroupG = groupG.FinalistsTeams();
 
             /*==START GROUP H==*/
             IPhase groupH = new Group();
             groupH.TeamList = teamsHList;
-            groupH.start();
+            groupH.start(nameof(groupH));
             this.teamsFinalistsGroupH = groupH.FinalistsTeams();
 
             this.ShowGroupsFinalists();
@@ -154,49 +161,49 @@ namespace WorldCupSimulator
             IPhase RoundSexteenA = new RoundFinal();
             RoundSexteenA.TeamList.Add(teamsFinalistsGroupA[0]);
             RoundSexteenA.TeamList.Add(teamsFinalistsGroupB[1]);
-            RoundSexteenA.start();
+            RoundSexteenA.start(nameof(RoundSexteenA));
             teamsFinalistsRoundSexteenA = RoundSexteenA.FinalistsTeams();
 
             IPhase RoundSexteenB = new RoundFinal();
             RoundSexteenB.TeamList.Add(teamsFinalistsGroupB[0]);
             RoundSexteenB.TeamList.Add(teamsFinalistsGroupA[1]);
-            RoundSexteenB.start();
+            RoundSexteenB.start(nameof(RoundSexteenB));
             teamsFinalistsRoundSexteenB = RoundSexteenB.FinalistsTeams();
 
             IPhase RoundSexteenC = new RoundFinal();
             RoundSexteenC.TeamList.Add(teamsFinalistsGroupC[0]);
             RoundSexteenC.TeamList.Add(teamsFinalistsGroupD[1]);
-            RoundSexteenC.start();
+            RoundSexteenC.start(nameof(RoundSexteenC));
             teamsFinalistsRoundSexteenC = RoundSexteenC.FinalistsTeams();
 
             IPhase RoundSexteenD = new RoundFinal();
             RoundSexteenD.TeamList.Add(teamsFinalistsGroupD[0]);
             RoundSexteenD.TeamList.Add(teamsFinalistsGroupC[1]);
-            RoundSexteenD.start();
+            RoundSexteenD.start(nameof(RoundSexteenD));
             teamsFinalistsRoundSexteenD = RoundSexteenD.FinalistsTeams();
 
             IPhase RoundSexteenE = new RoundFinal();
             RoundSexteenE.TeamList.Add(teamsFinalistsGroupE[0]);
             RoundSexteenE.TeamList.Add(teamsFinalistsGroupF[1]);
-            RoundSexteenE.start();
+            RoundSexteenE.start(nameof(RoundSexteenE));
             teamsFinalistsRoundSexteenE = RoundSexteenE.FinalistsTeams();
 
             IPhase RoundSexteenF = new RoundFinal();
             RoundSexteenF.TeamList.Add(teamsFinalistsGroupF[0]);
             RoundSexteenF.TeamList.Add(teamsFinalistsGroupE[1]);
-            RoundSexteenF.start();
+            RoundSexteenF.start(nameof(RoundSexteenF));
             teamsFinalistsRoundSexteenF = RoundSexteenF.FinalistsTeams();
 
             IPhase RoundSexteenG = new RoundFinal();
             RoundSexteenG.TeamList.Add(teamsFinalistsGroupG[0]);
             RoundSexteenG.TeamList.Add(teamsFinalistsGroupH[1]);
-            RoundSexteenG.start();
+            RoundSexteenG.start(nameof(RoundSexteenF));
             teamsFinalistsRoundSexteenG = RoundSexteenG.FinalistsTeams();
 
             IPhase RoundSexteenH = new RoundFinal();
             RoundSexteenH.TeamList.Add(teamsFinalistsGroupH[0]);
             RoundSexteenH.TeamList.Add(teamsFinalistsGroupG[1]);
-            RoundSexteenH.start();
+            RoundSexteenH.start(nameof(RoundSexteenG));
             teamsFinalistsRoundSexteenH = RoundSexteenH.FinalistsTeams();
 
             this.ShowRoundSexteenFinalists();
@@ -206,25 +213,25 @@ namespace WorldCupSimulator
             IPhase RoundEightA = new RoundFinal();
             RoundEightA.TeamList.Add(teamsFinalistsRoundSexteenA[0]);
             RoundEightA.TeamList.Add(teamsFinalistsRoundSexteenC[0]);
-            RoundEightA.start();
+            RoundEightA.start(nameof(RoundEightA));
             teamsFinalistsRoundEightA = RoundEightA.FinalistsTeams();
 
             IPhase RoundEightB = new RoundFinal();
             RoundEightB.TeamList.Add(teamsFinalistsRoundSexteenB[0]);
             RoundEightB.TeamList.Add(teamsFinalistsRoundSexteenD[0]);
-            RoundEightB.start();
+            RoundEightB.start(nameof(RoundEightB));
             teamsFinalistsRoundEightB = RoundEightB.FinalistsTeams();
 
             IPhase RoundEightC = new RoundFinal();
             RoundEightC.TeamList.Add(teamsFinalistsRoundSexteenE[0]);
             RoundEightC.TeamList.Add(teamsFinalistsRoundSexteenG[0]);
-            RoundEightC.start();
+            RoundEightC.start(nameof(RoundEightC));
             teamsFinalistsRoundEightC = RoundEightC.FinalistsTeams();
 
             IPhase RoundEightD = new RoundFinal();
             RoundEightD.TeamList.Add(teamsFinalistsRoundSexteenF[0]);
             RoundEightD.TeamList.Add(teamsFinalistsRoundSexteenH[0]);
-            RoundEightD.start();
+            RoundEightD.start(nameof(RoundEightD));
             teamsFinalistsRoundEightD = RoundEightD.FinalistsTeams();
 
             this.ShowRoundEightFinalists();
@@ -234,13 +241,13 @@ namespace WorldCupSimulator
             IPhase SemiFinalA = new RoundFinal();
             SemiFinalA.TeamList.Add(teamsFinalistsRoundEightA[0]);
             SemiFinalA.TeamList.Add(teamsFinalistsRoundEightC[0]);
-            SemiFinalA.start();
+            SemiFinalA.start(nameof(SemiFinalA));
             teamsFinalistsSemiFinalA = SemiFinalA.FinalistsTeams();
 
             IPhase SemiFinalB = new RoundFinal();
             SemiFinalB.TeamList.Add(teamsFinalistsRoundEightB[0]);
             SemiFinalB.TeamList.Add(teamsFinalistsRoundEightD[0]);
-            SemiFinalB.start();
+            SemiFinalB.start(nameof(SemiFinalB));
             teamsFinalistsSemiFinalB = SemiFinalB.FinalistsTeams();
 
             this.ShowSemiFinalFinalists();  
@@ -250,13 +257,11 @@ namespace WorldCupSimulator
             IPhase Final = new RoundFinal();
             Final.TeamList.Add(teamsFinalistsSemiFinalA[0]);
             Final.TeamList.Add(teamsFinalistsSemiFinalB[0]);
-            Final.start();
+            Final.start(nameof(Final));
             TeamWinner = Final.FinalistsTeams();
 
             this.ShowWinner();
         }
-
-
 
         private void ShowGroupsFinalists()
         {
@@ -297,7 +302,5 @@ namespace WorldCupSimulator
             Console.WriteLine("=======Congratulations!=======");
         }
 
-
-        
     }
 }

@@ -16,7 +16,7 @@ namespace WorldCupSimulator.Class
             TeamList = new List<Team>();    
         }
 
-        public void start()
+        public void start(string phaseGroup)
         {
             if (TeamList.Count != 2)
             {
@@ -30,16 +30,30 @@ namespace WorldCupSimulator.Class
             }
 
             Match match = new Match(TeamList[0], TeamList[1]);
+
             match.Play();
         }
+
         public List<Team> FinalistsTeams()
         {
-            var finalists =
+            List<Team> finalists =
                         (from t in TeamList
                          orderby t.victories descending
                          select t
-                        ).Take(1)
-                        .ToList();
+                        ).ToList();
+
+            for(int i = 0; i <= finalists.Count - 1; i ++)
+            {
+                if(i > 0)
+                {
+                    finalists[i].status = Enum.Status.Eliminated;
+                    finalists.RemoveAt(i);
+                }
+            }
+
+            Console.WriteLine("Press any to Continue");
+            Console.ReadKey();
+            Console.Clear();
 
             return finalists;
         }
