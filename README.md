@@ -25,7 +25,10 @@ I use the FIFA ranking and random numbers for choose the match winner e the cham
 Its necessary to have the file with the teams. (\Files\teams.csv)
 There is the FIFA number and group.
 
-Run in CLI.
+Run in CLI. 
+```
+dotnet run
+```
 
 ### Autor
 - [Rodolfo J.Silva](https://github.com/lrodolfol) (Developer)
