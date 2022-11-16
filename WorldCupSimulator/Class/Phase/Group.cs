@@ -39,7 +39,7 @@ namespace WorldCupSimulator.Class
         private List<Team> Classification()
         {
             List<Team> classificationTeam = (from t in TeamList
-                                     orderby t.victories descending
+                                     orderby t.victories descending, t.goals descending
                                      select t).ToList();
 
             return classificationTeam;

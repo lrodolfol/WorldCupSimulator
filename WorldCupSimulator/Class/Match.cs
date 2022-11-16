@@ -21,26 +21,32 @@ namespace WorldCupSimulator.Class
 
         public void Play()
         {
-            ScoredGoal();
-
             Console.WriteLine($"{TeamA.Name} Vs {TeamB.Name}");
 
-            TeamWinner = goalsTeamA > goalsTeamB ? this.TeamA : this.TeamB;
+            ScoredGoal();
 
-            // there may be a tie
-            Random rand = new Random();
-            TeamWinner = (rand.Next(11)) == 0 ? this.TeamA : this.TeamB;
+            TeamWinner = goalsTeamA > goalsTeamB ? 
+                this.TeamA : goalsTeamB > goalsTeamA ? 
+                this.TeamB : null;
 
-            if (goalsTeamA > goalsTeamB)
+            if (TeamWinner == TeamA)
             {
                 this.TeamA.victories++;
                 this.TeamB.defeats++;
             }
-            else if (goalsTeamB > goalsTeamA)
+            else if (TeamWinner == TeamB)
             {
                 this.TeamB.victories++;
                 this.TeamA.defeats++;
             }
+            else
+            {
+                // there may be a tie
+                Random rand = new Random();
+                TeamWinner = (rand.Next(11)) == 0 ? this.TeamA : this.TeamB;
+            }
+            
+            
 
             Console.WriteLine($"\t Winner: {TeamWinner.Name} ");
             Thread.Sleep(2000);

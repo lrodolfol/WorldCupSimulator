@@ -1,6 +1,6 @@
 ﻿using WorldCupSimulator;
 
-Console.WriteLine("==============================================");
+Console.WriteLine("==========rodolfoti.jesus@gmail.com===========");
 Console.WriteLine("=====Welcome to World Cup Simulator 2022!=====");
 Console.WriteLine("=========Press any key to continue...=========");
 Console.WriteLine("==============================================");
@@ -91,6 +91,8 @@ do
     clear();
 
 } while (op == "S");
+
+Console.WriteLine("thanks for using. \nDeveloped by: Rodolfo Jesus");
 
 void clear()
 {
