@@ -30,6 +30,8 @@ Run in CLI.
 dotnet run
 ```
 
+Read the rules in \WorldCupSimulator\Files\RULES - PT-BR.txt
+
 ### Autor
 - [Rodolfo J.Silva](https://github.com/lrodolfol) (Developer)
 - [LinkeIn](https://www.linkedin.com/in/rodolfoj-silva/)
