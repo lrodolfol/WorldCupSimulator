@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WorldCupSimulator.Interface;
+﻿using WorldCupSimulator.Interface;
 
-namespace WorldCupSimulator.Class
+namespace WorldCupSimulator.Class.Matches
 {
     public class Group : IPhase
     {
         public List<Team> TeamList {get;set;}
-        private string _phaseGroup;
+        private string _phaseGroup { get; set; } = null!;
 
         public Group()
         {
