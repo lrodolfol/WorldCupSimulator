@@ -9,7 +9,7 @@ namespace WorldCupSimulator
     public class Main
     {
         private GroupPhaseTeams groupPhaseTeams = new();
-        private SexteenGroup SexteenGroup = new();
+        private SixteenGroup SexteenGroup = new();
         private EightGroup EightGroup = new();
         private SemiFinalGroup SemiFinalGroup = new();
         
