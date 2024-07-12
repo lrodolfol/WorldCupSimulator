@@ -8,11 +8,11 @@ namespace WorldCupSimulator
 {
     public class Main
     {
-        GroupPhaseTeams groupPhaseTeams = new();
-        SexteenGroup SexteenGroup = new();
-        EightGroup EightGroup = new();
-        SemiFinalGroup SemiFinalGroup = new();
-        Final Final = new();
+        private GroupPhaseTeams groupPhaseTeams = new();
+        private SexteenGroup SexteenGroup = new();
+        private EightGroup EightGroup = new();
+        private SemiFinalGroup SemiFinalGroup = new();
+        private Final Final = new();
 
         public List<Team> TeamWinner = new List<Team>();
 
