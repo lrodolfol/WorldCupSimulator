@@ -12,25 +12,7 @@ namespace WorldCupSimulator
         SexteenGroup SexteenGroup = new();
         EightGroup EightGroup = new();
         SemiFinalGroup SemiFinalGroup = new();
-
-        //public List<Team> teamsFinalistsRoundSexteenA { get; private set; }
-        //public List<Team> teamsFinalistsRoundSexteenB { get; private set; }
-        //public List<Team> teamsFinalistsRoundSexteenC { get; private set; }
-        //public List<Team> teamsFinalistsRoundSexteenD { get; private set; }
-        //public List<Team> teamsFinalistsRoundSexteenE { get; private set; }
-        //public List<Team> teamsFinalistsRoundSexteenF { get; private set; }
-        //public List<Team> teamsFinalistsRoundSexteenG { get; private set; }
-        //public List<Team> teamsFinalistsRoundSexteenH { get; private set; }
-
-        //public List<Team> teamsFinalistsRoundEightA { get; private set; }
-        //public List<Team> teamsFinalistsRoundEightB { get; private set; }
-        //public List<Team> teamsFinalistsRoundEightC { get; private set; }
-        //public List<Team> teamsFinalistsRoundEightD { get; private set; }
-
-        //public List<Team> teamsFinalistsSemiFinalA { get; private set; }
-        //public List<Team> teamsFinalistsSemiFinalB { get; private set; }
-
-        public List<Team> teamsFinalistsFinal = new List<Team>();
+        Final Final = new();
 
         public List<Team> TeamWinner = new List<Team>();
 
