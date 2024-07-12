@@ -62,7 +62,7 @@ do
             space();
 
             /*GROUPS ROUND SEXTEEN*/
-            main.FillRoundSexteen();
+            main.FillRoundSixteen();
             space();
 
             /*GROUPS ROUND EIGHT*/
