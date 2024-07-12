@@ -13,13 +13,13 @@ public class GroupPhaseTeams
     private readonly List<Team> GroupGList = new();
     private readonly List<Team> GroupHList = new();
     public IReadOnlyCollection<Team> GroupA => GroupAList;
-    public IReadOnlyCollection<Team> GroupB => GroupAList;
-    public IReadOnlyCollection<Team> GroupC => GroupAList;
-    public IReadOnlyCollection<Team> GroupD => GroupAList;
-    public IReadOnlyCollection<Team> GroupE => GroupAList;
-    public IReadOnlyCollection<Team> GroupF => GroupAList;
-    public IReadOnlyCollection<Team> GroupG => GroupAList;
-    public IReadOnlyCollection<Team> GroupH => GroupAList;
+    public IReadOnlyCollection<Team> GroupB => GroupBList;
+    public IReadOnlyCollection<Team> GroupC => GroupCList;
+    public IReadOnlyCollection<Team> GroupD => GroupDList;
+    public IReadOnlyCollection<Team> GroupE => GroupEList;
+    public IReadOnlyCollection<Team> GroupF => GroupFList;
+    public IReadOnlyCollection<Team> GroupG => GroupGList;
+    public IReadOnlyCollection<Team> GroupH => GroupHList;
 
 
     public readonly List<Team> FinalistsGroupAList = new();
