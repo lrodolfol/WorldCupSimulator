@@ -39,67 +39,67 @@ public class GroupPhaseTeams
     public IReadOnlyCollection<Team> FinalistGroupG => FinalistsGroupGList;
     public IReadOnlyCollection<Team> FinalistGroupH => FinalistsGroupHList;
 
-    private void ValidateFinalists(IReadOnlyCollection<Team> team)
+    private void ValidateFinalists(IReadOnlyCollection<Team> team, string nameGroup)
     {
         if (team is null)
             throw new CupException($"Team {nameof(team)} can not be null");
 
         if (team.Count >= 2)
-            throw new CupException("Group already has two teams");
+            throw new CupException($"Group already has two teams. {nameGroup}");
     }
-    private void ValidateGroup(IReadOnlyCollection<Team> team)
+    private void ValidateGroup(IReadOnlyCollection<Team> team, string nameGroup)
     {
         if (team is null)
             throw new CupException($"Team group can not be null");
 
         if (team.Count >= 4)
-            throw new CupException("Group already has four teams");
+            throw new CupException($"Group already has four teams. {nameGroup}");
     }
 
     public void AddTeamGroupA(Team team)
     {
-        ValidateGroup(GroupA);
+        ValidateGroup(GroupA, nameof(GroupA));
         GroupAList.Add(team);
     }
     public void AddTeamGroupB(Team team)
     {
-        ValidateGroup(GroupB);
+        ValidateGroup(GroupB, nameof(GroupB));
         GroupBList.Add(team);
     }
     public void AddTeamGroupC(Team team)
     {
-        ValidateGroup(GroupC);
+        ValidateGroup(GroupC, nameof(GroupC));
         GroupCList.Add(team);
     }
     public void AddTeamGroupD(Team team)
     {
-        ValidateGroup(GroupD);
+        ValidateGroup(GroupD, nameof(GroupD));
         GroupDList.Add(team);
     }
     public void AddTeamGroupE(Team team)
     {
-        ValidateGroup(GroupE);
+        ValidateGroup(GroupE, nameof(GroupE));
         GroupEList.Add(team);
     }
     public void AddTeamGroupF(Team team)
     {
-        ValidateGroup(GroupF);
+        ValidateGroup(GroupF, nameof(GroupF));
         GroupFList.Add(team);
     }
     public void AddTeamGroupG(Team team)
     {
-        ValidateGroup(GroupG);
+        ValidateGroup(GroupG, nameof(GroupG));
         GroupGList.Add(team);
     }
     public void AddTeamGroupH(Team team)
     {
-        ValidateGroup(GroupH);
+        ValidateGroup(GroupH, nameof(GroupH));
         GroupHList.Add(team);
     }
 
     public void AddGroupAFinalists(List<Team> team)
     {
-        ValidateFinalists(FinalistGroupA);
+        ValidateFinalists(FinalistGroupA, nameof(FinalistGroupA));
         team.ForEach(x =>
         {
             FinalistsGroupAList.Add(x);
@@ -107,7 +107,7 @@ public class GroupPhaseTeams
     }
     public void AddGroupBFinalists(List<Team> team)
     {
-        ValidateFinalists(FinalistGroupB);
+        ValidateFinalists(FinalistGroupB, nameof(FinalistGroupB));
         team.ForEach(x =>
         {
             FinalistsGroupBList.Add(x);
@@ -115,7 +115,7 @@ public class GroupPhaseTeams
     }
     public void AddGroupCFinalists(List<Team> team)
     {
-        ValidateFinalists(FinalistGroupC);
+        ValidateFinalists(FinalistGroupC, nameof(FinalistGroupC));
         team.ForEach(x =>
         {
             FinalistsGroupCList.Add(x);
@@ -123,7 +123,7 @@ public class GroupPhaseTeams
     }
     public void AddGroupDFinalists(List<Team> team)
     {
-        ValidateFinalists(FinalistGroupD);
+        ValidateFinalists(FinalistGroupD, nameof(FinalistGroupD));
         team.ForEach(x =>
         {
             FinalistsGroupDList.Add(x);
@@ -131,7 +131,7 @@ public class GroupPhaseTeams
     }
     public void AddGroupEFinalists(List<Team> team)
     {
-        ValidateFinalists(FinalistGroupE);
+        ValidateFinalists(FinalistGroupE, nameof(FinalistGroupE));
         team.ForEach(x =>
         {
             FinalistsGroupEList.Add(x);
@@ -139,7 +139,7 @@ public class GroupPhaseTeams
     }
     public void AddGroupFFinalists(List<Team> team)
     {
-        ValidateFinalists(FinalistGroupF);
+        ValidateFinalists(FinalistGroupF, nameof(FinalistGroupF));
         team.ForEach(x =>
         {
             FinalistsGroupFList.Add(x);
@@ -147,10 +147,18 @@ public class GroupPhaseTeams
     }
     public void AddGroupGFinalists(List<Team> team)
     {
-        ValidateFinalists(FinalistGroupG);
+        ValidateFinalists(FinalistGroupG, nameof(FinalistGroupG));
         team.ForEach(x =>
         {
             FinalistsGroupGList.Add(x);
+        });
+    }
+    public void AddGroupHFinalists(List<Team> team)
+    {
+        ValidateFinalists(FinalistGroupH, nameof(FinalistGroupH));
+        team.ForEach(x =>
+        {
+            FinalistsGroupHList.Add(x);
         });
     }
 }
