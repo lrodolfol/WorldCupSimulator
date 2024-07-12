@@ -10,6 +10,7 @@ namespace WorldCupSimulator
     {
         GroupPhaseTeams groupPhaseTeams = new();
         SexteenGroup SexteenGroup = new();
+        EightGroup EightGroup = new();
 
         //public List<Team> teamsFinalistsRoundSexteenA { get; private set; }
         //public List<Team> teamsFinalistsRoundSexteenB { get; private set; }
@@ -20,10 +21,10 @@ namespace WorldCupSimulator
         //public List<Team> teamsFinalistsRoundSexteenG { get; private set; }
         //public List<Team> teamsFinalistsRoundSexteenH { get; private set; }
 
-        public List<Team> teamsFinalistsRoundEightA { get; private set; }
-        public List<Team> teamsFinalistsRoundEightB { get; private set; }
-        public List<Team> teamsFinalistsRoundEightC { get; private set; }
-        public List<Team> teamsFinalistsRoundEightD { get; private set; }
+        //public List<Team> teamsFinalistsRoundEightA { get; private set; }
+        //public List<Team> teamsFinalistsRoundEightB { get; private set; }
+        //public List<Team> teamsFinalistsRoundEightC { get; private set; }
+        //public List<Team> teamsFinalistsRoundEightD { get; private set; }
 
         public List<Team> teamsFinalistsSemiFinalA { get; private set; }
         public List<Team> teamsFinalistsSemiFinalB { get; private set; }
@@ -190,39 +191,39 @@ namespace WorldCupSimulator
             RoundEightA.TeamList.Add(SexteenGroup.SexteenFinalistA.ToList()[0]); //  teamsFinalistsRoundSexteenA[0]);
             RoundEightA.TeamList.Add(SexteenGroup.SexteenFinalistC.ToList()[1]); // teamsFinalistsRoundSexteenC[0]);
             RoundEightA.start(nameof(RoundEightA));
-            teamsFinalistsRoundEightA = RoundEightA.FinalistsTeams();
+            EightGroup.AddFinalistsGroupA(RoundEightA.FinalistsTeams());
 
             IPhase RoundEightB = new RoundFinal();
             RoundEightB.TeamList.Add(SexteenGroup.SexteenFinalistB.ToList()[0]); // teamsFinalistsRoundSexteenB[0]);
             RoundEightB.TeamList.Add(SexteenGroup.SexteenFinalistD.ToList()[0]); // teamsFinalistsRoundSexteenD[0]);
             RoundEightB.start(nameof(RoundEightB));
-            teamsFinalistsRoundEightB = RoundEightB.FinalistsTeams();
+            EightGroup.AddFinalistsGroupB(RoundEightB.FinalistsTeams());
 
             IPhase RoundEightC = new RoundFinal();
             RoundEightC.TeamList.Add(SexteenGroup.SexteenFinalistE.ToList()[0]); // teamsFinalistsRoundSexteenE[0]);
             RoundEightC.TeamList.Add(SexteenGroup.SexteenFinalistG.ToList()[0]); // teamsFinalistsRoundSexteenG[0]);
             RoundEightC.start(nameof(RoundEightC));
-            teamsFinalistsRoundEightC = RoundEightC.FinalistsTeams();
+            EightGroup.AddFinalistsGroupC(RoundEightC.FinalistsTeams());
 
             IPhase RoundEightD = new RoundFinal();
             RoundEightD.TeamList.Add(SexteenGroup.SexteenFinalistF.ToList()[0]); // teamsFinalistsRoundSexteenF[0]);
             RoundEightD.TeamList.Add(SexteenGroup.SexteenFinalistH.ToList()[0]); // (teamsFinalistsRoundSexteenH[0]);
             RoundEightD.start(nameof(RoundEightD));
-            teamsFinalistsRoundEightD = RoundEightD.FinalistsTeams();
+            EightGroup.AddFinalistsGroupD(RoundEightD.FinalistsTeams());
 
             this.ShowRoundEightFinalists();
         }
         public void FillSemiFinal()
         {
             IPhase SemiFinalA = new RoundFinal();
-            SemiFinalA.TeamList.Add(teamsFinalistsRoundEightA[0]);
-            SemiFinalA.TeamList.Add(teamsFinalistsRoundEightC[0]);
+            SemiFinalA.TeamList.Add(EightGroup.EightFinalistA.ToList()[0]); // teamsFinalistsRoundEightA[0]);
+            SemiFinalA.TeamList.Add(EightGroup.EightFinalistC.ToList()[0]); // teamsFinalistsRoundEightC[0]);
             SemiFinalA.start(nameof(SemiFinalA));
             teamsFinalistsSemiFinalA = SemiFinalA.FinalistsTeams();
 
             IPhase SemiFinalB = new RoundFinal();
-            SemiFinalB.TeamList.Add(teamsFinalistsRoundEightB[0]);
-            SemiFinalB.TeamList.Add(teamsFinalistsRoundEightD[0]);
+            SemiFinalB.TeamList.Add(EightGroup.EightFinalistB.ToList()[0]); // teamsFinalistsRoundEightB[0]);
+            SemiFinalB.TeamList.Add(EightGroup.EightFinalistD.ToList()[0]); // teamsFinalistsRoundEightD[0]);
             SemiFinalB.start(nameof(SemiFinalB));
             teamsFinalistsSemiFinalB = SemiFinalB.FinalistsTeams();
 
@@ -270,8 +271,8 @@ namespace WorldCupSimulator
         private void ShowRoundEightFinalists()
         {
             Console.WriteLine("We are the Finalist for semi final phase: ");
-            Console.WriteLine($"{teamsFinalistsRoundEightA[0].Name} Vs {teamsFinalistsRoundEightC[0].Name}");
-            Console.WriteLine($"{teamsFinalistsRoundEightB[0].Name} Vs {teamsFinalistsRoundEightD[0].Name}");
+            Console.WriteLine($"{EightGroup.EightFinalistA.ToList()[0].Name} Vs {EightGroup.EightFinalistC.ToList()[0].Name}");
+            Console.WriteLine($"{EightGroup.EightFinalistB.ToList()[0].Name} Vs {EightGroup.EightFinalistD.ToList()[0].Name}");
         }
         private void ShowSemiFinalFinalists()
         {
