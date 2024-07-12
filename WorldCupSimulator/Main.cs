@@ -12,8 +12,7 @@ namespace WorldCupSimulator
         private SexteenGroup SexteenGroup = new();
         private EightGroup EightGroup = new();
         private SemiFinalGroup SemiFinalGroup = new();
-        private Final Final = new();
-
+        
         public List<Team> TeamWinner = new List<Team>();
 
         public void Start(List<Team> teams)
