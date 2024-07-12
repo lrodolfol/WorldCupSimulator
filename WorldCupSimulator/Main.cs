@@ -129,7 +129,7 @@ namespace WorldCupSimulator
             IPhase groupH = new Group();
             groupH.TeamList = groupPhaseTeams.GroupH.ToList();
             groupH.start(nameof(groupH));
-            groupPhaseTeams.AddGroupGFinalists(groupH.FinalistsTeams());
+            groupPhaseTeams.AddGroupHFinalists(groupH.FinalistsTeams());
 
             this.ShowGroupsFinalists();
         }
@@ -189,7 +189,7 @@ namespace WorldCupSimulator
         {
             IPhase RoundEightA = new RoundFinal();
             RoundEightA.TeamList.Add(SexteenGroup.SexteenFinalistA.ToList()[0]); //  teamsFinalistsRoundSexteenA[0]);
-            RoundEightA.TeamList.Add(SexteenGroup.SexteenFinalistC.ToList()[1]); // teamsFinalistsRoundSexteenC[0]);
+            RoundEightA.TeamList.Add(SexteenGroup.SexteenFinalistC.ToList()[0]); // teamsFinalistsRoundSexteenC[0]);
             RoundEightA.start(nameof(RoundEightA));
             EightGroup.AddFinalistsGroupA(RoundEightA.FinalistsTeams());
 
